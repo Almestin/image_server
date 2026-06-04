@@ -4,6 +4,8 @@ services:
   app:
     build: .
     container_name: image_app
+    ports:
+      - "8000:8000"
     volumes:
       - images:/images
       - logs:/logs
