@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check.">
+    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Added:&#10;Generate a unique name (timestamp + short UUID + extension).&#10;Save the file to the .images folder.&#10;Return a JSON response with the file name and link.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -115,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780587980086</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added:&#10;Generate a unique name (timestamp + short UUID + extension).&#10;Save the file to the .images folder.&#10;Return a JSON response with the file name and link.">
+      <option name="closed" value="true" />
+      <created>1780600867147</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780600867147</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -125,6 +133,7 @@
     <MESSAGE value="Add the do_POST method with a path check – if it's not /upload, return a 404.&#10;And check the Content-Type – it must be multipart/form-data. Tests pass!" />
     <MESSAGE value="Implementing do_POST with manual parsing" />
     <MESSAGE value="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check." />
+    <MESSAGE value="Added:&#10;Generate a unique name (timestamp + short UUID + extension).&#10;Save the file to the .images folder.&#10;Return a JSON response with the file name and link." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added:&#10;Generate a unique name (timestamp + short UUID + extension).&#10;Save the file to the .images folder.&#10;Return a JSON response with the file name and link." />
   </component>
 </project>
