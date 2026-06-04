@@ -4,17 +4,28 @@
 import re
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse
+import os
+import uuid
+import time
+import json
 
 MAX_FILE_SIZE = 5 * 1024 * 1024   # 5 МБ
 ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif'}
+UPLOAD_DIR = "./images"
 
 def is_allowed_file(filename):
     ext = '.' + filename.lower().split('.')[-1] if '.' in filename else ''
     return ext in ALLOWED_EXTENSIONS
 
-
+# new name - timestamp_uuid.ext
+def generate_unique_filename(original_filename):
+    ext = '.' + original_filename.lower().split('.')[-1] if '.' in original_filename else ''
+    unique_id = str(uuid.uuid4())[:8]
+    timestamp = int(time.time())
+    return f"{timestamp}_{unique_id}{ext}"
 
 class ImageHandler(BaseHTTPRequestHandler):
+
     def do_GET(self):
         parsed_path = urlparse(self.path)
         if parsed_path.path == "/":
@@ -27,10 +38,14 @@ class ImageHandler(BaseHTTPRequestHandler):
                 "Uploaded images are available at: http://localhost:8080/images/<filename>\n"
             )
             self.wfile.write(message.encode('utf-8'))
+
         else:
             self.send_response(404)
             self.end_headers()
             self.wfile.write(b"404 - Sorry, Not Found")
+
+
+
 
     def do_POST(self):
         parsed_path = urlparse(self.path)
@@ -102,11 +117,30 @@ class ImageHandler(BaseHTTPRequestHandler):
             self.wfile.write(f"File size exceeds {MAX_FILE_SIZE // 1024 // 1024} MB".encode())
             return
 
-        ####  Temporary for test
-        response_text = f"Received file: {original_filename}, size: {len(file_data)}"
+        # gen name
+        unique_name = generate_unique_filename(original_filename)
+        save_path = os.path.join(UPLOAD_DIR, unique_name)
+
+        # make directory images
+        os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+        # write file
+        with open(save_path, 'wb') as f:
+            f.write(file_data)
+
+        #  JSON  responce
+        image_url = f"http://localhost:8000/images/{unique_name}"
+        response = {
+             "status": "success",
+             "message": "File uploaded successfully",
+             "filename": unique_name,
+             "url": image_url
+            }
+
         self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
         self.end_headers()
-        self.wfile.write(response_text.encode())
+        self.wfile.write(json.dumps(response, ensure_ascii=False).encode('utf-8'))
 
 def run_server(port=8000):
     server_address = ('0.0.0.0', port)

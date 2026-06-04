@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Implementing do_POST with manual parsing">
+    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -107,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780586713135</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check.">
+      <option name="closed" value="true" />
+      <created>1780587980086</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780587980086</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -116,6 +124,7 @@
     <MESSAGE value="For the / path, we return an extended greeting.&#10;For other paths, we return a 404." />
     <MESSAGE value="Add the do_POST method with a path check – if it's not /upload, return a 404.&#10;And check the Content-Type – it must be multipart/form-data. Tests pass!" />
     <MESSAGE value="Implementing do_POST with manual parsing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing do_POST with manual parsing" />
+    <MESSAGE value="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check." />
   </component>
 </project>
