@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="A minimal HTTP server has been created and tested successfully.">
+    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="For the / path, we return an extended greeting.&#10;For other paths, we return a 404.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -82,12 +82,21 @@
       <option name="project" value="LOCAL" />
       <updated>1780571703844</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="For the / path, we return an extended greeting.&#10;For other paths, we return a 404.">
+      <option name="closed" value="true" />
+      <created>1780572227768</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780572227768</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start of the project!" />
     <MESSAGE value="A minimal HTTP server has been created and tested successfully." />
-    <option name="LAST_COMMIT_MESSAGE" value="A minimal HTTP server has been created and tested successfully." />
+    <MESSAGE value="For the / path, we return an extended greeting.&#10;For other paths, we return a 404." />
+    <option name="LAST_COMMIT_MESSAGE" value="For the / path, we return an extended greeting.&#10;For other paths, we return a 404." />
   </component>
 </project>

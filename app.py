@@ -20,7 +20,27 @@ class ImageHandler(BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.end_headers()
-            self.wfile.write(b"Not Found")
+            self.wfile.write(b"404 - Sorry, Not Found")
+
+    def do_POST(self):
+        parsed_path = urlparse(self.path)
+        if parsed_path.path != "/upload":
+            self.send_response(404)
+            self.end_headers()
+            self.wfile.write(b"404 - Sorry, Not Found")
+            return
+
+        content_type = self.headers.get('Content-Type')
+        if not content_type or not content_type.startswith('multipart/form-data'):
+            self.send_response(400)
+            self.end_headers()
+            self.wfile.write(b"Expected multipart/form-data")
+            return
+
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"POST /upload works")
+
 
 def run_server():
     server_address = ('0.0.0.0', 8000)
