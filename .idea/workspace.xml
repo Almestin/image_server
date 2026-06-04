@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Added:&#10;Generate a unique name (timestamp + short UUID + extension).&#10;Save the file to the .images folder.&#10;Return a JSON response with the file name and link.">
+    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Added: Success logging after saving a file.&#10;Error logging - warnings for unsupported formats, file size exceeded, missing file, and request errors. Exception logging.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780600867147</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added: Success logging after saving a file.&#10;Error logging - warnings for unsupported formats, file size exceeded, missing file, and request errors. Exception logging.">
+      <option name="closed" value="true" />
+      <created>1780604277427</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780604277427</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,6 +146,7 @@
     <MESSAGE value="Implementing do_POST with manual parsing" />
     <MESSAGE value="Added checks:&#10;- Constants for allowed extensions and maximum size.&#10;Extension check function.&#10;File size check." />
     <MESSAGE value="Added:&#10;Generate a unique name (timestamp + short UUID + extension).&#10;Save the file to the .images folder.&#10;Return a JSON response with the file name and link." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added:&#10;Generate a unique name (timestamp + short UUID + extension).&#10;Save the file to the .images folder.&#10;Return a JSON response with the file name and link." />
+    <MESSAGE value="Added: Success logging after saving a file.&#10;Error logging - warnings for unsupported formats, file size exceeded, missing file, and request errors. Exception logging." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added: Success logging after saving a file.&#10;Error logging - warnings for unsupported formats, file size exceeded, missing file, and request errors. Exception logging." />
   </component>
 </project>
