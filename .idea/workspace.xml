@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Add the do_POST method with a path check – if it's not /upload, return a 404.&#10;And check the Content-Type – it must be multipart/form-data. Tests pass!">
-      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+    <list default="true" id="89b72939-d188-4ac3-974f-1e81fc069d1f" name="Changes" comment="Implementing do_POST with manual parsing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780573135562</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implementing do_POST with manual parsing">
+      <option name="closed" value="true" />
+      <created>1780586713135</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780586713135</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -109,6 +115,7 @@
     <MESSAGE value="A minimal HTTP server has been created and tested successfully." />
     <MESSAGE value="For the / path, we return an extended greeting.&#10;For other paths, we return a 404." />
     <MESSAGE value="Add the do_POST method with a path check – if it's not /upload, return a 404.&#10;And check the Content-Type – it must be multipart/form-data. Tests pass!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add the do_POST method with a path check – if it's not /upload, return a 404.&#10;And check the Content-Type – it must be multipart/form-data. Tests pass!" />
+    <MESSAGE value="Implementing do_POST with manual parsing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing do_POST with manual parsing" />
   </component>
 </project>

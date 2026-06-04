@@ -5,6 +5,13 @@ import re
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse
 
+MAX_FILE_SIZE = 5 * 1024 * 1024   # 5 МБ
+ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif'}
+
+def is_allowed_file(filename):
+    ext = '.' + filename.lower().split('.')[-1] if '.' in filename else ''
+    return ext in ALLOWED_EXTENSIONS
+
 
 
 class ImageHandler(BaseHTTPRequestHandler):
@@ -79,6 +86,20 @@ class ImageHandler(BaseHTTPRequestHandler):
             self.send_response(400)
             self.end_headers()
             self.wfile.write(b"Missing file field 'file'")
+            return
+
+        # check ext
+        if not is_allowed_file(original_filename):
+            self.send_response(400)
+            self.end_headers()
+            self.wfile.write(b"Unsupported file format. Allowed: .jpg, .png, .gif")
+            return
+
+        # check size
+        if len(file_data) > MAX_FILE_SIZE:
+            self.send_response(400)
+            self.end_headers()
+            self.wfile.write(f"File size exceeds {MAX_FILE_SIZE // 1024 // 1024} MB".encode())
             return
 
         ####  Temporary for test
