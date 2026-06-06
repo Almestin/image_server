@@ -67,6 +67,13 @@ class ImageHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"Not Found")
 
+    def _send_error(self, code, message):
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.end_headers()
+        error_body = json.dumps({"status": "error", "message": message}, ensure_ascii=False)
+        self.wfile.write(error_body.encode('utf-8'))
+
 
     def do_POST(self):
         parsed_path = urlparse(self.path)
@@ -134,7 +141,7 @@ class ImageHandler(BaseHTTPRequestHandler):
                 logger.warning(f"Unsupported file format: {original_filename}")
                 self.send_response(400)
                 self.end_headers()
-                self.wfile.write(b"Unsupported file format. Allowed: .jpg, .png, .gif")
+                self._send_error(400, "Unsupported file format. Allowed: .jpg, .png, .gif")
                 return
 
             # check size
@@ -142,14 +149,12 @@ class ImageHandler(BaseHTTPRequestHandler):
                 logger.warning(f"File too large: {original_filename} ({len(file_data)} bytes)")
                 self.send_response(400)
                 self.end_headers()
-                self.wfile.write(f"File size exceeds {MAX_FILE_SIZE // 1024 // 1024} MB".encode())
+                self._send_error(400, f"File size exceeds {MAX_FILE_SIZE // 1024 // 1024} MB")
                 return
 
             if not validate_image_content(file_data):
                 logger.warning(f"Invalid image content: {original_filename}")
-                self.send_response(400)
-                self.end_headers()
-                self.wfile.write(b"File is not a valid image (JPEG, PNG, GIF)")
+                self._send_error(415, "File content is not a valid image (JPEG, PNG, GIF)")
                 return
 
             # gen name
